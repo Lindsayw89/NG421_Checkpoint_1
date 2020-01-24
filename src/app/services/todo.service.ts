@@ -14,8 +14,11 @@ export class TodoService {
   statuses:string[]=['Todo', 'Doing', 'Done'];
 
   constructor() { }
-  getTodos(){
-    return this.todoList;
+  getTodos(status: string){
+    if(!status){
+      return this.todoList
+    }
+    return this.todoList.filter(todo => todo.status=== status)
   }
   deleteTodo(todo: ITodo) {
     const index = this.todoList.findIndex(todoItem => todoItem === todo);
@@ -24,5 +27,8 @@ export class TodoService {
   addTodo(todo: ITodo):void {
     todo.id = this.todoId ++;
     this.todoList.push(todo);
+  }
+  getStatuses(): string[]{
+    return this.statuses
   }
 }
