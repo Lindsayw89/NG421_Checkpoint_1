@@ -8,12 +8,15 @@ import {TodoService} from '../services/todo.service';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  todoList: ITodo [] = [ ]
+  //todoList: ITodo [] = [ ] // getter below instead
   constructor(private todoService : TodoService) { }
   @Input() status
 
   ngOnInit() {
-    this.todoList = this.todoService.getTodos(this.status);
+   // this.todoList = this.todoService.getTodos(this.status); removed for get below
   }
 
-}
+   get todoList(){
+     return this.todoService.getTodos(this.status); //.filter(t=>t.status===this.status)
+  }
+ }
