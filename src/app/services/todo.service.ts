@@ -12,7 +12,13 @@ export class TodoService {
     { title: 'Install Angular CLI', id: this.todoId, status:'Todo', createdAt: new Date(), description: 'need to get done by tomorrow' },
   ]
   statuses:string[]=['Todo', 'Doing', 'Done'];
+  editingTodo:ITodo;
 
+  TODO_DATA
+  : ITodo[] = [
+    {id: 1, title: 'install', status:'To do', description:'need to get done', createdAt: new Date()},
+   
+  ];
   constructor() { }
   getTodos(status: string){
     if(!status){
@@ -29,6 +35,11 @@ export class TodoService {
     this.todoList.push(todo);
   }
   getStatuses(): string[]{
-    return this.statuses
+    return this.statuses;
+  }
+  editTodo(todo): ITodo{
+
+    this.editingTodo.description =todo.description;
+    return todo.description;
   }
 }

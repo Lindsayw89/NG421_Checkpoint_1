@@ -7,11 +7,23 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
-import {RouterModule } from '@angular/router';
+import {RouterModule, Routes } from '@angular/router';
 import { BoardComponent } from './board/board.component';
+import { TodoEditComponent } from './todo-edit/todo-edit.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { TodoTableComponent } from './todo-table/todo-table.component';
+import{MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material'
 
-const routes = [];
-const appRoutes = RouterModule.forRoot(routes);
+
+
+const Routes = [];
+const appRoutes = RouterModule.forRoot(Routes);
+
+// const appRoutes: Routes= [
+//   {path: '', component:TodoTableComponent},
+//   {path:'todolist', component:TodoListComponent },
+// ]
 
 @NgModule({
   declarations: [
@@ -20,16 +32,19 @@ const appRoutes = RouterModule.forRoot(routes);
     TodoListComponent,
     CreateTodoComponent,
     ConfirmationModalComponent,
-    BoardComponent
+    BoardComponent,
+    TodoEditComponent,
+    TodoTableComponent
   ],
   imports: [
     BrowserModule,
     appRoutes,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NoopAnimationsModule, MatTableModule, MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[ ConfirmationModalComponent]
+  entryComponents:[ ConfirmationModalComponent, TodoEditComponent ]
 })
 export class AppModule { }
