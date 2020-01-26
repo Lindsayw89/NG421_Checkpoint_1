@@ -15,10 +15,7 @@ export class TodoService {
   editingTodo:ITodo;
 
   TODO_DATA
-  : ITodo[] = [
-    {id: 1, title: 'install', status:'To do', description:'need to get done', createdAt: new Date()},
-   
-  ];
+  : ITodo[] = this.todoList;
   constructor() { }
   getTodos(status: string){
     if(!status){
@@ -37,9 +34,9 @@ export class TodoService {
   getStatuses(): string[]{
     return this.statuses;
   }
-  editTodo(todo): ITodo{
+  editTodo(description): ITodo{
 
-    this.editingTodo.description =todo.description;
-    return todo.description;
+    this.editingTodo.description =description
+    return description;
   }
 }

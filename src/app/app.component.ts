@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import {ITodo} from './interfaces/itodo';
+import {ActivatedRoute, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',

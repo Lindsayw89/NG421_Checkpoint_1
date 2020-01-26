@@ -14,16 +14,15 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoTableComponent } from './todo-table/todo-table.component';
 import{MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material'
+import {AppRoutingModule} from './app-routing/app-routing.module';
 
 
 
-const Routes = [];
-const appRoutes = RouterModule.forRoot(Routes);
 
-// const appRoutes: Routes= [
-//   {path: '', component:TodoTableComponent},
-//   {path:'todolist', component:TodoListComponent },
-// ]
+
+ const appRoutes: Routes= [
+  ,
+ ]
 
 @NgModule({
   declarations: [
@@ -34,15 +33,17 @@ const appRoutes = RouterModule.forRoot(Routes);
     ConfirmationModalComponent,
     BoardComponent,
     TodoEditComponent,
-    TodoTableComponent
+    TodoTableComponent,
+    
   ],
   imports: [
     BrowserModule,
-    appRoutes,
     FormsModule,
     NgbModule,
-    NoopAnimationsModule, MatTableModule, MatSortModule
-  ],
+    NoopAnimationsModule, MatTableModule, MatSortModule, 
+    AppRoutingModule,
+    RouterModule],
+
   providers: [],
   bootstrap: [AppComponent],
   entryComponents:[ ConfirmationModalComponent, TodoEditComponent ]
