@@ -35,7 +35,6 @@ export class TodoService {
     return this.statuses;
   }
   editTodo(description): ITodo{
-
     this.editingTodo.description =description
     return description;
   }

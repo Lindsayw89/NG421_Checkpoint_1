@@ -10,16 +10,17 @@ import {ITodo} from '../interfaces/itodo';
 export class TodoEditComponent implements OnInit {
   modalInstance: NgbModalRef;
   constructor() { }
-  editTodo:ITodo;
+  todo:ITodo; // changed name
+  newDescription: string;
   ngOnInit() {
   }
 
-  yes(){
-    this.modalInstance.close("yes");
+  yes():void{
+    this.modalInstance.close(this.newDescription);// changed from copied othr modal
  }
- edit(description){
-  this.editTodo.description =description;
- this.yes();
-}
+//  edit(description){
+//   this.todo.description =description; // chaged from editing todo
+//  this.yes();
+// }
 
 }

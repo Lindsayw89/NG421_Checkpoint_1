@@ -1,11 +1,11 @@
 
 <div class="form-group">
     <!-- You will want to change this label later on but for now it can stay as-is -->
-    <label>Edit description</label>
+    <label>Edit {{todo.title}}</label>
     <div class="input-group">
       <div class="input-group-append">
-        <textarea [(ngModel)]="description" > test</textarea>
-        <button (click)="yes()">yes</button>
+        <textarea [(ngModel)]="newDescription" > </textarea>
+        <button (click)="yes()">save</button>
       </div>
     </div>
   </div>

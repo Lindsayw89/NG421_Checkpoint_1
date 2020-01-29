@@ -1,13 +1,14 @@
 <div class="view">
     <label *ngIf="!isEditing"  (dblclick)="isEditing=true">{{todo.title}}</label>
-    <input (blur)="isEditing=false" *ngIf="isEditing" [(ngModel)]="todo.title">//
-  
+    <input (blur)="isEditing=false" *ngIf="isEditing" [(ngModel)]="todo.title">
+    <p>{{todo.description}}</p>
 
     <select [(ngModel)]="todo.status"  name="status">
+       
         <option  *ngFor="let status of statuses">Todo</option>
         <option>Todo</option>
-        <option  >Doing</option>
-        <option  >Done</option>
+        <option >Doing</option>
+        <option >Done</option>
     </select>
     <div class="float-right">
       
